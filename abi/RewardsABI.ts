@@ -1,4 +1,4 @@
-export const RewardsABI = [
+const RewardsABI = [
 	{
 		"inputs": [
 			{
@@ -307,3 +307,5 @@ export const RewardsABI = [
 		"type": "receive"
 	}
 ]
+
+module.exports = RewardsABI
