@@ -11,7 +11,7 @@ const fetch = require('node-fetch');
 
 // Middleware per concedere l'accesso a tutti gli origini (*)
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://polynomials.it');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', '*');
   next();
