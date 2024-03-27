@@ -11,8 +11,8 @@ module.exports = {
     once: false, // Ascolta l'evento più volte
 
     async execute(client) {
-        const provider = new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/arbitrum");
-        const contract = new ethers.Contract('0x35029f03602454a6149b353dd8d227c4f2d99b7c', ABI, provider);
+        const provider = new ethers.providers.JsonRpcProvider("https://polygon-rpc.com");
+        const contract = new ethers.Contract('0x034d89CD11a548fc4E4D7C365B0460fa6895De67', ABI, provider);
         console.log("Provider and contract initialized");
 
         // Funzione per gestire l'evento NftMinted
@@ -25,14 +25,14 @@ module.exports = {
 
             tokenIds.forEach(async (tokenId) => {
                 try {
-                    const image = 'https://ipfs.filebase.io/ipfs/' + 'QmPejW5kfFj67JccPCpXcazyehhxNgrg2h1WR6burL9UDj/' + tokenId + '.png'
+                    const image = 'https://ipfs.filebase.io/ipfs/' + 'QmRhjJMbXk8fYoiRv7Tsk6TwA7ZkVkYb5fTQJ3GxF57cfu/' + tokenId + '.png'
                     console.log("New event - Image URL:", image);
 
                     const embedMsg = new Discord.MessageEmbed()
                         .setColor('#0099ff')
-                        .setTitle("Divitrend Factories #" + tokenId)
+                        .setTitle("Polynomials #" + tokenId)
                         .setURL(image)
-                        .setDescription(`[${account.slice(0, 5)}...] has just minted: $FACT #${tokenId}`)
+                        .setDescription(`[${account.slice(0, 5)}...] has just minted: $PNOM #${tokenId}`)
                         .setThumbnail(image)
                         .addField("FROM", `[${account}]`, true)
                         .addField("TX HASH:", `[${transactionHash}]`, true);
