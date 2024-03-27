@@ -5,7 +5,7 @@ const axios = require("axios");
 const { Client, Intents, MessageActionRow } = require('discord.js');
 const Discord = require('discord.js');
 const { ethers } = require("ethers");
-const Rewards_ABI = require('../abi/RewardsABI.json');
+const {Rewards_ABI} = require('../abi/RewardsABI');
 
 module.exports = {
 	name: process.env.DISCORD_TOKEN_COMMAND || "pnom",
